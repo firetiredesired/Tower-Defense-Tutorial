@@ -7,7 +7,7 @@ public class Node : MonoBehaviour {
 	public Color notEnoughMoneyColor;
     public Vector3 positionOffset;
 
-	[HideInInspector]
+	//[HideInInspector]
 	public GameObject turret;
 	[HideInInspector]
 	public TurretBlueprint turretBlueprint;

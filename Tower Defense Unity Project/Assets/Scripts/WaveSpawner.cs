@@ -94,7 +94,7 @@ public class WaveSpawner : MonoBehaviour {
         }
         for (int i = 0; i < _enemy05; i++)
         {
-            Instantiate(enemy04, spawnPoint.position, spawnPoint.rotation);
+            Instantiate(enemy05, spawnPoint.position, spawnPoint.rotation);
             yield return new WaitForSeconds(30f / 40);
         }
 			

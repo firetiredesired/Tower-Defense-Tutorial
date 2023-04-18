@@ -24,8 +24,8 @@ public class NodeUI : MonoBehaviour {
 			upgradeButton.interactable = true;
 		} else
 		{
-			upgradeCost.text = "DONE";
-			upgradeButton.interactable = false;
+			upgradeCost.text = "next upgrade";
+			
 		}
 
 		sellAmount.text = "$" + target.turretBlueprint.GetSellAmount();
