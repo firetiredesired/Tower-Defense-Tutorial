@@ -51,7 +51,7 @@ public class BuildManager : MonoBehaviour {
 		DeselectNode();
 	}
 
-	public TurretBlueprint GetTurretToBuild ()
+    public TurretBlueprint GetTurretToBuild ()
 	{
 		return turretToBuild;
 	}

@@ -1,14 +1,19 @@
 using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class Turret : MonoBehaviour {
 
-	private Transform target;
+	[SerializeField] Transform target;
 	private Enemy targetEnemy;
+	
+	
 
 	[Header("General")]
+    public bool useboomturret = false;
+    public bool useLaser = false;
 
-	public float range = 15f;
+    public float range = 15f;
 
 	[Header("Use Bullets (default)")]
 	public GameObject bulletPrefab;
@@ -16,7 +21,7 @@ public class Turret : MonoBehaviour {
 	private float fireCountdown = 0f;
 
 	[Header("Use Laser")]
-	public bool useLaser = false;
+	
 
 	public int damageOverTime = 30;
 	public float slowAmount = .5f;
@@ -36,7 +41,14 @@ public class Turret : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		if (useboomturret)
+		{
+			target = this.transform;
+		}
+		else
+		{
 		InvokeRepeating("UpdateTarget", 0f, 0.5f);
+		}
 	}
 	
 	void UpdateTarget ()
@@ -132,7 +144,7 @@ public class Turret : MonoBehaviour {
 
 	void Shoot ()
 	{
-		GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+		GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);                       
 		Bullet bullet = bulletGO.GetComponent<Bullet>();
 
 		if (bullet != null)

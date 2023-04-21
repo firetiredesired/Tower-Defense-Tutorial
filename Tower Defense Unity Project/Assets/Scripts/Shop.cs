@@ -30,7 +30,8 @@ public class Shop : MonoBehaviour {
 	{
 		Debug.Log("Laser Beamer Selected");
 		buildManager.SelectTurretToBuild(laserBeamer);
-	}
+       
+    }
     public void Selectboomturret()
     {
         Debug.Log("boom turret selected");
